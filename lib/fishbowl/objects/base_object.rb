@@ -6,7 +6,7 @@ module Fishbowl::Objects
       Fishbowl::Errors.confirm_success_or_raise(code)
       puts "Response successful" if Fishbowl.configuration.debug.eql? true
       @@ticket = response.xpath("/FbiXml/Ticket/Key").text
-      [code, response]
+      [code, nil, response]
     end
 
   protected
